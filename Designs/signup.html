@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eyego Dashboard - Login</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #0c77f2;
+            --secondary-color: #f2f7ff;
+            --background-color: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --accent-color: #e0f2fe;
+        }
+        body {
+            @apply font-sans bg-[var(--background-color)] text-[var(--text-primary)];
+        }
+        .button_primary {
+            @apply bg-[var(--primary-color)] text-white rounded-md px-4 py-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+        }
+        .button_secondary {
+            @apply bg-[var(--secondary-color)] text-[var(--primary-color)] rounded-md px-4 py-2 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+        }
+        .input {
+            @apply bg-white border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full;
+        }
+        .typography_h1 {
+            @apply text-3xl font-bold text-[var(--text-primary)];
+        }
+        .typography_h2 {
+            @apply text-2xl font-semibold text-[var(--text-primary)];
+        }
+        .typography_body {
+            @apply text-base text-[var(--text-secondary)];
+        }
+    </style>
+</head>
+<body class="antialiased">
+<div class="flex flex-col min-h-screen">
+<header class="flex items-center justify-between px-6 sm:px-10 py-4 border-b border-gray-200">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 text-[var(--primary-color)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-[var(--text-primary)]">Eyego Dashboard</h1>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center bg-gray-50 px-4 sm:px-6 lg:px-8 py-12">
+<div class="max-w-md w-full space-y-8 bg-white p-8 sm:p-10 rounded-xl shadow-lg">
+<div class="text-center">
+<h2 class="typography_h2 mt-6">Welcome to Eyego Dashboard</h2>
+<p class="typography_body mt-2">Sign in to continue</p>
+</div>
+<div class="space-y-6">
+<button class="w-full flex items-center justify-center gap-3 button_secondary py-3">
+<svg class="w-5 h-5" fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a96,96,0,1,1-21.95-61.09,8,8,0,1,1-12.33,10.18A80,80,0,1,0,207.6,136H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128Z"></path>
+</svg>
+<span class="font-semibold">Sign in with Google</span>
+</button>
+<div class="relative">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-300"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-white text-[var(--text-secondary)]">or</span>
+</div>
+</div>
+<form action="#" class="space-y-6" method="POST">
+<div>
+<label class="block text-sm font-medium text-[var(--text-primary)]" for="email">Email address</label>
+<div class="mt-1">
+<input autocomplete="email" class="input" id="email" name="email" placeholder="Enter your email" required="" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-[var(--text-primary)]" for="password">Password</label>
+<div class="mt-1">
+<input autocomplete="current-password" class="input" id="password" name="password" placeholder="Enter your password" required="" type="password"/>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="text-sm">
+<a class="font-medium text-[var(--primary-color)] hover:text-blue-500" href="#">
+                                    Forgot your password?
+                                </a>
+</div>
+</div>
+<div>
+<button class="w-full button_primary py-3 font-semibold" type="submit">
+                                Sign in
+                            </button>
+</div>
+</form>
+</div>
+<p class="mt-8 text-center text-sm text-[var(--text-secondary)]">
+                    Don't have an account?
+                    <a class="font-medium text-[var(--primary-color)] hover:text-blue-500" href="#">
+                        Sign up
+                    </a>
+</p>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #0c77f2;
+  --secondary-color: #f2f7ff;
+  --background-color: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .button_primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+  }
+
+  body {
+    @apply bg-gray-900 text-gray-100;
+  }
+
+  .button_primary {
+    @apply bg-blue-500 hover:bg-blue-600;
+  }
+}

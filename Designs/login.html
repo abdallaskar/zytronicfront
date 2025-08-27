@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eyego Dashboard - Signup</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #0c77f2;
+        --secondary-color: #f2f7ff;
+        --background-color: #ffffff;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --accent-color: #e0f2fe;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-primary);
+      }
+      .button_primary {
+        @apply bg-[var(--primary-color)] text-white rounded-md px-4 py-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+      }
+      .button_secondary {
+        @apply bg-[var(--secondary-color)] text-[var(--primary-color)] rounded-md px-4 py-2 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+      }
+      .input {
+        @apply bg-white border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+      }
+      .typography_h1 {
+        @apply text-3xl font-bold text-[var(--text-primary)];
+      }
+      .typography_h2 {
+        @apply text-2xl font-semibold text-[var(--text-primary)];
+      }
+      .typography_body {
+        @apply text-base text-[var(--text-secondary)];
+      }
+    </style>
+</head>
+<body class="font-sans bg-[var(--background-color)] text-[var(--text-primary)]">
+<div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-10 py-4">
+<div class="flex items-center gap-4 text-[var(--text-primary)]">
+<div class="w-8 h-8 text-[var(--primary-color)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[var(--text-primary)] text-xl font-bold leading-tight tracking-[-0.015em]">Eyego Dashboard</h2>
+</div>
+</header>
+<main class="flex flex-1 items-center justify-center py-10">
+<div class="w-full max-w-md space-y-8 rounded-xl bg-white p-8 shadow-lg">
+<div>
+<h2 class="typography_h2 mt-6 text-center">Create your account</h2>
+</div>
+<form action="#" class="mt-8 space-y-6" method="POST">
+<input name="remember" type="hidden" value="true"/>
+<div class="space-y-4 rounded-md shadow-sm">
+<div>
+<label class="sr-only" for="email-address">Email address</label>
+<input autocomplete="email" class="input relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-3 text-[var(--text-primary)] placeholder-gray-500 focus:z-10 focus:border-[var(--primary-color)] focus:outline-none focus:ring-[var(--primary-color)] sm:text-sm" id="email-address" name="email" placeholder="Email address" required="" type="email"/>
+</div>
+<div>
+<label class="sr-only" for="password">Password</label>
+<input autocomplete="new-password" class="input relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-3 text-[var(--text-primary)] placeholder-gray-500 focus:z-10 focus:border-[var(--primary-color)] focus:outline-none focus:ring-[var(--primary-color)] sm:text-sm" id="password" name="password" placeholder="Password" required="" type="password"/>
+</div>
+<div>
+<label class="sr-only" for="confirm-password">Confirm Password</label>
+<input autocomplete="new-password" class="input relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-3 text-[var(--text-primary)] placeholder-gray-500 focus:z-10 focus:border-[var(--primary-color)] focus:outline-none focus:ring-[var(--primary-color)] sm:text-sm" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required="" type="password"/>
+</div>
+</div>
+<div>
+<button class="button_primary group relative flex w-full justify-center rounded-md border border-transparent py-3 px-4 text-sm font-medium text-white hover:saturate-150 focus:outline-none focus:ring-2 focus:ring-offset-2" type="submit">
+                  Sign up
+                </button>
+</div>
+</form>
+<p class="typography_body mt-2 text-center text-sm">
+              Already have an account?
+              <a class="font-medium text-[var(--primary-color)] hover:text-blue-500" href="#">
+                Sign in
+              </a>
+</p>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

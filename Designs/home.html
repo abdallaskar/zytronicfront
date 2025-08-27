@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eyego Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #0c77f2;
+            --secondary-color: #f2f7ff;
+            --background-color: #f9fafb;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --accent-color: #e0f2fe;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+        }
+        .button_primary {
+            @apply bg-[var(--primary-color)] text-white rounded-lg px-4 py-2.5 font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors;
+        }
+        .button_secondary {
+            @apply bg-white text-[var(--text-secondary)] border border-gray-300 rounded-lg px-4 py-2.5 font-semibold hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50 transition-colors;
+        }
+        .card {
+            @apply bg-white rounded-xl shadow-sm;
+        }
+        .typography_h1 {
+            @apply text-3xl font-bold text-[var(--text-primary)];
+        }
+        .typography_h2 {
+            @apply text-2xl font-bold tracking-tight text-[var(--text-primary)];
+        }
+        .typography_body {
+            @apply text-base text-[var(--text-secondary)];
+        }
+    </style>
+</head>
+<body class="bg-[var(--background-color)]">
+<div class="flex h-screen flex-col">
+<header class="h-16 flex items-center justify-between px-6 bg-white border-b border-gray-200 w-full">
+<div class="flex items-center gap-3">
+<div class="text-[var(--primary-color)]">
+<svg class="h-8 w-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-[var(--text-primary)]">Eyego Dashboard</h1>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center">
+<div class="text-center max-w-lg mx-auto">
+<h2 class="typography_h1 mb-4">Welcome to Eyego Dashboard</h2>
+<p class="typography_body mb-8">
+                    Your central hub for monitoring, analysis, and insights. Log in to access your dashboard or explore the features.
+                </p>
+<div class="flex gap-4 justify-center">
+<a class="button_secondary" href="#">Login</a>
+<a class="button_primary" href="#">Go to Dashboard</a>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

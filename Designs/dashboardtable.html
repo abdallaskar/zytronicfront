@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Eyego Dashboard - Orders</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #0c77f2;
+        --secondary-color: #f2f7ff;
+        --background-color: #ffffff;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --accent-color: #e0f2fe;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        @apply bg-[var(--background-color)] text-[var(--text-primary)];
+      }
+      .main_container {
+        @apply container mx-auto px-4 py-8;
+      }
+      .card {
+        @apply bg-white rounded-lg shadow-md p-6;
+      }
+      .button_primary {
+        @apply bg-[var(--primary-color)] text-white rounded-md px-4 py-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+      }
+      .button_secondary {
+        @apply bg-[var(--secondary-color)] text-[var(--primary-color)] rounded-md px-4 py-2 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+      }
+      .input {
+        @apply bg-white border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+      }
+      .typography_h1 {
+        @apply text-3xl font-bold text-[var(--text-primary)];
+      }
+      .typography_h2 {
+        @apply text-2xl font-semibold text-[var(--text-primary)];
+      }
+      .typography_body {
+        @apply text-base text-[var(--text-secondary)];
+      }
+    </style>
+</head>
+<body class="bg-[var(--background-color)]">
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-gray-200 bg-white px-6 py-4 shadow-sm">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-xl font-bold text-[var(--text-primary)]">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+<h1 class="typography_h2">Eyego Dashboard</h1>
+</div>
+<nav class="hidden items-center gap-6 text-sm font-medium md:flex">
+<a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Overview</a>
+<a class="text-[var(--primary-color)] font-semibold" href="#">Customers</a>
+<a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Products</a>
+<a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Orders</a>
+<a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Promotions</a>
+<a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="input w-full pl-10" placeholder="Search..." type="search"/>
+</div>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBb51yO4nfI5ydarAqF7DIefX6iyjUdLDvoApXGcz16SW_7pzA5l-5CDFCSS4fh4AxMNojaampNjX6VSXp0hO1k6860qTwDTAAQeTx3p61b_03ALDUwd7rjx2yf_9tBaiZAxyLtyu30CFAs3XgGQF1XrceMu9IhkL17Hb8JHfr8LfFfQAZJHNcixJkV5UFG2Wt_VMWMdXNoRgf1jhGK_vzU1FZrS83rHsp2BzxWZUCJBVCWA1hqXY4i7J8eB3qexvW05ykNuemADIU");'></div>
+</div>
+</header>
+<main class="main_container flex-1 bg-gray-50">
+<div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+<div>
+<h1 class="typography_h1">Orders</h1>
+<p class="typography_body">Manage your orders with ease.</p>
+</div>
+<button class="button_primary">
+<svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6v6m0 0v6m0-6h6m-6 0H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            Create Order
+          </button>
+</div>
+<div class="card">
+<div class="mb-4 flex flex-wrap items-center justify-between gap-4">
+<div class="relative flex-1">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="input w-full pl-10" placeholder="Search orders by ID, customer..." type="search"/>
+</div>
+<div class="flex gap-2">
+<button class="button_secondary">
+                Status
+                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="button_secondary">
+                Date Range
+                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="button_secondary">
+                Export
+                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b bg-gray-50 text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)]">
+<th class="px-6 py-3">
+<div class="flex items-center gap-1">Order ID <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 9l4-4 4 4m0 6l-4 4-4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+</th>
+<th class="px-6 py-3">
+<div class="flex items-center gap-1">Date <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 9l4-4 4 4m0 6l-4 4-4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+</th>
+<th class="px-6 py-3">Customer</th>
+<th class="px-6 py-3 text-right">Total</th>
+<th class="px-6 py-3 text-center">Status</th>
+<th class="px-6 py-3 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y">
+<tr class="typography_body hover:bg-gray-50">
+<td class="px-6 py-4 font-medium text-[var(--text-primary)]">#12345</td>
+<td class="px-6 py-4">Aug 15, 2023</td>
+<td class="px-6 py-4">Sophia Clark</td>
+<td class="px-6 py-4 text-right">$150.00</td>
+<td class="px-6 py-4 text-center">
+<span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800">Shipped</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-[var(--primary-color)]">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</td>
+</tr>
+<tr class="typography_body hover:bg-gray-50">
+<td class="px-6 py-4 font-medium text-[var(--text-primary)]">#12346</td>
+<td class="px-6 py-4">Aug 16, 2023</td>
+<td class="px-6 py-4">Liam Carter</td>
+<td class="px-6 py-4 text-right">$200.00</td>
+<td class="px-6 py-4 text-center">
+<span class="rounded-full bg-yellow-100 px-3 py-1 text-xs font-medium text-yellow-800">Processing</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-[var(--primary-color)]">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</td>
+</tr>
+<tr class="typography_body hover:bg-gray-50">
+<td class="px-6 py-4 font-medium text-[var(--text-primary)]">#12347</td>
+<td class="px-6 py-4">Aug 17, 2023</td>
+<td class="px-6 py-4">Olivia Bennett</td>
+<td class="px-6 py-4 text-right">$100.00</td>
+<td class="px-6 py-4 text-center">
+<span class="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-800">Delivered</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-[var(--primary-color)]">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</td>
+</tr>
+<tr class="typography_body hover:bg-gray-50">
+<td class="px-6 py-4 font-medium text-[var(--text-primary)]">#12348</td>
+<td class="px-6 py-4">Aug 18, 2023</td>
+<td class="px-6 py-4">Noah Foster</td>
+<td class="px-6 py-4 text-right">$250.00</td>
+<td class="px-6 py-4 text-center">
+<span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800">Shipped</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-[var(--primary-color)]">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</td>
+</tr>
+<tr class="typography_body hover:bg-gray-50">
+<td class="px-6 py-4 font-medium text-[var(--text-primary)]">#12349</td>
+<td class="px-6 py-4">Aug 19, 2023</td>
+<td class="px-6 py-4">Ava Harper</td>
+<td class="px-6 py-4 text-right">$180.00</td>
+<td class="px-6 py-4 text-center">
+<span class="rounded-full bg-yellow-100 px-3 py-1 text-xs font-medium text-yellow-800">Processing</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-[var(--primary-color)]">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between border-t px-6 py-4">
+<p class="text-sm text-[var(--text-secondary)]">Showing 1 to 5 of 50 results</p>
+<div class="flex items-center gap-2">
+<a class="rounded-md border p-2 text-[var(--text-secondary)] hover:bg-gray-100" href="#">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+<a class="rounded-md bg-[var(--primary-color)] px-4 py-2 text-sm font-medium text-white" href="#">1</a>
+<a class="rounded-md px-4 py-2 text-sm text-[var(--text-secondary)] hover:bg-gray-100" href="#">2</a>
+<a class="rounded-md px-4 py-2 text-sm text-[var(--text-secondary)] hover:bg-gray-100" href="#">3</a>
+<span class="px-4 py-2 text-sm text-[var(--text-secondary)]">...</span>
+<a class="rounded-md px-4 py-2 text-sm text-[var(--text-secondary)] hover:bg-gray-100" href="#">10</a>
+<a class="rounded-md border p-2 text-[var(--text-secondary)] hover:bg-gray-100" href="#">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
